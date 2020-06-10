@@ -30,7 +30,7 @@ const Gallery = ({ data }) => {
   return (
     <Layout>
       <Masonry
-        className="flex flex-wrap overflow-hidden -mx-1"
+        className="flex flex-wrap overflow-hidden mt-4 mr-6"
         options={{
           transitionDuration: 0,
         }}
