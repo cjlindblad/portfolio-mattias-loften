@@ -62,7 +62,6 @@ const Page = () => {
           onMoveNextRequest={() => {
             setPhotoIndex((photoIndex + 1) % images.length)
           }}
-          animationDisabled={true}
           enableZoom={false}
         />
       )}
