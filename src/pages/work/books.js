@@ -2,8 +2,9 @@ import React, { useState } from "react"
 import Img from "gatsby-image"
 import Lightbox from "react-image-lightbox"
 import { useStaticQuery, graphql } from "gatsby"
+import Masonry from "react-masonry-component"
 
-const Page = () => {
+const Page = React.memo(() => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { regex: "/books/" } }) {
@@ -34,7 +35,7 @@ const Page = () => {
   const Image = ({ fluid, index }) => {
     return (
       <div
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", width: "48%" }}
         onClick={() => {
           setIsOpen(true)
           setPhotoIndex(index)
@@ -46,10 +47,16 @@ const Page = () => {
   }
 
   return (
-    <div style={{ margin: "0 auto", maxWidth: "800px" }}>
-      {data.allFile.edges.map((edge, index) => {
-        return <Image fluid={edge.node.childImageSharp.fluid} index={index} />
-      })}
+    <div>
+      <Masonry
+        options={{
+          transitionDuration: 0,
+        }}
+      >
+        {data.allFile.edges.map((edge, index) => {
+          return <Image fluid={edge.node.childImageSharp.fluid} index={index} />
+        })}
+      </Masonry>
       {isOpen && (
         <Lightbox
           mainSrc={images[photoIndex]}
@@ -67,6 +74,6 @@ const Page = () => {
       )}
     </div>
   )
-}
+})
 
 export default Page
