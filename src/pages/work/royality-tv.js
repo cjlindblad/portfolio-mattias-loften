@@ -1,8 +1,9 @@
 import React from "react"
-import Img from "gatsby-image"
+import Gallery from "../../components/gallery"
+
 import { useStaticQuery, graphql } from "gatsby"
 
-const Page = () => {
+const Page = React.memo(() => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { regex: "/royality-tv/" } }) {
@@ -13,6 +14,9 @@ const Page = () => {
                 src
                 ...GatsbyImageSharpFluid
               }
+              internal {
+                description
+              }
             }
           }
         }
@@ -20,14 +24,7 @@ const Page = () => {
     }
   `)
 
-  return (
-    <div style={{ margin: "0 auto", maxWidth: "800px" }}>
-      {data.allFile.edges.map(edge => {
-        console.log(edge)
-        return <Img fluid={edge.node.childImageSharp.fluid} />
-      })}
-    </div>
-  )
-}
+  return <Gallery data={data} />
+})
 
 export default Page
