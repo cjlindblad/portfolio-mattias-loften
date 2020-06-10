@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Img from "gatsby-image"
 import Lightbox from "react-image-lightbox"
 import Masonry from "react-masonry-component"
+import Layout from "./layout"
 
 const Gallery = ({ data }) => {
   const [photoIndex, setPhotoIndex] = useState(0)
@@ -27,7 +28,7 @@ const Gallery = ({ data }) => {
   }
 
   return (
-    <div>
+    <Layout>
       <Masonry
         className="flex flex-wrap overflow-hidden -mx-1"
         options={{
@@ -53,7 +54,7 @@ const Gallery = ({ data }) => {
           enableZoom={false}
         />
       )}
-    </div>
+    </Layout>
   )
 }
 
