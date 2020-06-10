@@ -15,7 +15,7 @@ const Gallery = ({ data }) => {
   const Image = ({ fluid, index }) => {
     return (
       <div
-        className="sm: w-full lg:w-1/2 overflow-hidden my-1 px-1"
+        className="w-full lg:w-1/2 overflow-hidden my-1 px-1"
         style={{ cursor: "pointer" }}
         onClick={() => {
           setIsOpen(true)
@@ -30,7 +30,7 @@ const Gallery = ({ data }) => {
   return (
     <Layout>
       <Masonry
-        className="flex flex-wrap overflow-hidden mt-4 mr-6"
+        className="flex flex-wrap overflow-hidden"
         options={{
           transitionDuration: 0,
         }}

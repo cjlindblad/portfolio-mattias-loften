@@ -25,9 +25,9 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="flex flex-col md:flex-row ">
+    <div className="flex flex-col md:flex-row">
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 md:mt-4 md:mr-6">{children}</main>
     </div>
   )
 }
