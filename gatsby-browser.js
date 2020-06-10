@@ -6,3 +6,4 @@
 
 // You can delete this file if you're not using it
 import "react-image-lightbox/style.css"
+import "./src/styles/site.css"

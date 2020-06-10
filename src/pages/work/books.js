@@ -35,7 +35,8 @@ const Page = React.memo(() => {
   const Image = ({ fluid, index }) => {
     return (
       <div
-        style={{ cursor: "pointer", width: "48%" }}
+        className="w-1/2 overflow-hidden md:my-1 md:px-1"
+        style={{ cursor: "pointer" }}
         onClick={() => {
           setIsOpen(true)
           setPhotoIndex(index)
@@ -49,6 +50,7 @@ const Page = React.memo(() => {
   return (
     <div>
       <Masonry
+        className="flex flex-wrap overflow-hidden md:-mx-1"
         options={{
           transitionDuration: 0,
         }}
