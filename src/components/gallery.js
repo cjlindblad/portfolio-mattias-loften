@@ -12,7 +12,7 @@ const Gallery = ({ data }) => {
     edge => edge.node.childImageSharp.fluid.src
   )
 
-  const Image = ({ fluid, index }) => {
+  const Image = ({ fluid, index, caption }) => {
     return (
       <div
         className="w-full lg:w-1/2 overflow-hidden my-1 px-1"
@@ -23,6 +23,7 @@ const Gallery = ({ data }) => {
         }}
       >
         <Img fluid={fluid} />
+        {caption}
       </div>
     )
   }
@@ -36,7 +37,13 @@ const Gallery = ({ data }) => {
         }}
       >
         {data.allFile.edges.map((edge, index) => {
-          return <Image fluid={edge.node.childImageSharp.fluid} index={index} />
+          return (
+            <Image
+              fluid={edge.node.childImageSharp.fluid}
+              caption={edge.node.fields.exif.description}
+              index={index}
+            />
+          )
         })}
       </Masonry>
       {isOpen && (

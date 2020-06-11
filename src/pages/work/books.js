@@ -14,7 +14,9 @@ const Page = React.memo(() => {
                 src
                 ...GatsbyImageSharpFluid
               }
-              internal {
+            }
+            fields {
+              exif {
                 description
               }
             }
