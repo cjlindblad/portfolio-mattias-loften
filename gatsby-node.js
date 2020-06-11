@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     fastExif
       .read(node.absolutePath)
       .then(exifData => {
-        const description = get(exifData, ["image", "ImageDescription"], null)
+        const description = get(exifData, ["image", "ImageDescription"], "")
         console.log("----- CREATING NODE FIELD -----")
         createNodeField({
           node,

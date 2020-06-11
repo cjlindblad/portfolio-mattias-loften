@@ -7,7 +7,7 @@ const Page = React.memo(() => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
-        filter: { relativeDirectory: { regex: "/books/" } }
+        filter: { relativeDirectory: { regex: "/magazine-layout/" } }
         sort: { order: ASC, fields: name }
       ) {
         edges {

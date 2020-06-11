@@ -6,7 +6,10 @@ import { useStaticQuery, graphql } from "gatsby"
 const Page = React.memo(() => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { regex: "/royality-tv/" } }) {
+      allFile(
+        filter: { relativeDirectory: { regex: "/royality-tv/" } }
+        sort: { order: ASC, fields: name }
+      ) {
         edges {
           node {
             childImageSharp {
