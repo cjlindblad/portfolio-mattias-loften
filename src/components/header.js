@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const links = [
+export const links = [
   {
     to: "/work/books",
     name: "books",
@@ -25,12 +25,21 @@ const links = [
   },
 ]
 
-const Header = ({ siteTitle }) => (
-  <header className="w-64 h-24">
-    <div className="md:fixed pt-4 pl-4 md:pt-8 md:pl-8">
-      <h2 className="mb-1">Mattias Loftén</h2>
-      <h3>Portfolio</h3>
-      <div className="hidden md:block">
+const Header = ({ siteTitle, onMobileMenuClick }) => (
+  <header className="w-full md:w-64 h-24">
+    <div className="md:fixed pt-4 pl-4 pr-4 md:pr-0 md:pt-8 md:pl-8 relative">
+      <div className="flex flex-row justify-between">
+        <h2 className="mb-1">Mattias Loftén</h2>
+        <span
+          className="block md:hidden cursor-pointer"
+          onClick={onMobileMenuClick}
+        >
+          Menu
+        </span>
+      </div>
+      <h3 className="mb-0">Portfolio</h3>
+      <a href="mailto:contact@mattiasloften.com">contact@mattiasloften.com</a>
+      <div className="hidden md:block mt-8">
         {links.map(link => (
           <h3 style={{ margin: 0 }}>
             <Link
