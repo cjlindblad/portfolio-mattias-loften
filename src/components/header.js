@@ -38,12 +38,18 @@ const Header = ({ siteTitle, onMobileMenuClick }) => (
         </span>
       </div>
       <h2 className="mb-2 font-normal text-xl">Portfolio</h2>
-      <a href="mailto:contact@mattiasloften.com">contact@mattiasloften.com</a>
+      <a
+        className="hover:text-gray-600 hover:no-underline"
+        href="mailto:contact@mattiasloften.com"
+      >
+        contact@mattiasloften.com
+      </a>
       <div className="hidden md:block mt-8">
         {links.map(link => (
           <h3 key={link.to} className="mb-3 text-lg">
             <Link
-              className="whitespace-pre"
+              activeClassName="text-orange-500"
+              className="whitespace-pre text-gray-800 hover:text-gray-600"
               to={link.to}
               style={{
                 textDecoration: `none`,

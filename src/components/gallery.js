@@ -23,7 +23,7 @@ const Gallery = ({ data }) => {
         }}
       >
         <Img fluid={fluid} loading="eager" />
-        {caption}
+        {/* {caption && <span className="italic text-sm">{caption}</span>} */}
       </div>
     )
   }

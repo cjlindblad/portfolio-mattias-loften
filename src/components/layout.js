@@ -24,12 +24,11 @@ const Layout = ({ children }) => {
         } overflow-hidden transition-all duration-150 ease-in-out bg-orange-500 flex flex-col items-center justify-center`}
       >
         {links.map(link => (
-          <div
-            key={link.to}
-            className="text-xl whitespace-pre text-center text-gray-100 active:text-gray-100 leading-5 mb-3"
-          >
+          <div key={link.to} className="mb-3 leading-5 text-center">
             <Link
               to={link.to}
+              className="text-xl whitespace-pre text-white opacity-75 visited:text-white active:text-white"
+              activeClassName="opacity-100"
               style={{
                 textDecoration: `none`,
               }}
