@@ -7,7 +7,6 @@
 
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import Header, { links } from "./header"
@@ -15,16 +14,6 @@ import Header, { links } from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   return (
@@ -35,7 +24,7 @@ const Layout = ({ children }) => {
         } overflow-hidden transition-all duration-150 ease-in-out bg-gray-600 flex flex-col items-center justify-center`}
       >
         {links.map(link => (
-          <div className="text-2xl text-gray-100 leading-relaxed">
+          <div key={link.to} className="text-2xl text-gray-100 leading-relaxed">
             <Link
               to={link.to}
               style={{

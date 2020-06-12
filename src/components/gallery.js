@@ -12,6 +12,8 @@ const Gallery = ({ data }) => {
     edge => edge.node.childImageSharp.fluid.src
   )
 
+  console.log(data)
+
   const Image = ({ fluid, index, caption }) => {
     return (
       <div

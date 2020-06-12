@@ -41,7 +41,7 @@ const Header = ({ siteTitle, onMobileMenuClick }) => (
       <a href="mailto:contact@mattiasloften.com">contact@mattiasloften.com</a>
       <div className="hidden md:block mt-8">
         {links.map(link => (
-          <h3 style={{ margin: 0 }}>
+          <h3 key={link.to} style={{ margin: 0 }}>
             <Link
               to={link.to}
               style={{

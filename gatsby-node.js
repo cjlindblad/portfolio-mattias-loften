@@ -8,15 +8,19 @@
 const fastExif = require("fast-exif")
 const get = require("lodash/get")
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
 
-  if (node.dir && node.dir.includes("/src/images")) {
+  if (
+    node.dir &&
+    node.internal.type === "File" &&
+    node.internal.mediaType.includes("image") &&
+    node.dir.includes("/src/images")
+  ) {
     fastExif
       .read(node.absolutePath)
       .then(exifData => {
         const description = get(exifData, ["image", "ImageDescription"], "")
-        console.log("----- CREATING NODE FIELD -----")
         createNodeField({
           node,
           name: "exif",
