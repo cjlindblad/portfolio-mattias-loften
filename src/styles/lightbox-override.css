@@ -9,3 +9,11 @@
 .ril__toolbarRightSide {
   padding-right: 10px;
 }
+
+.ril-zoom-in {
+  display: none;
+}
+
+.ril-zoom-out {
+  display: none;
+}

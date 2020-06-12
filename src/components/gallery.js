@@ -58,7 +58,6 @@ const Gallery = ({ data }) => {
           onMoveNextRequest={() => {
             setPhotoIndex((photoIndex + 1) % images.length)
           }}
-          enableZoom={false}
         />
       )}
     </Layout>
