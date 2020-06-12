@@ -21,10 +21,13 @@ const Layout = ({ children }) => {
       <nav
         className={`${
           showMobileMenu ? "h-64" : "h-0"
-        } overflow-hidden transition-all duration-150 ease-in-out bg-gray-600 flex flex-col items-center justify-center`}
+        } overflow-hidden transition-all duration-150 ease-in-out bg-orange-500 flex flex-col items-center justify-center`}
       >
         {links.map(link => (
-          <div key={link.to} className="text-2xl text-gray-100 leading-relaxed">
+          <div
+            key={link.to}
+            className="text-xl whitespace-pre text-center text-gray-100 leading-5 mb-3"
+          >
             <Link
               to={link.to}
               style={{
