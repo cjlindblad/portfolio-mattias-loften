@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
         {links.map(link => (
           <div
             key={link.to}
-            className="text-xl whitespace-pre text-center text-gray-100 leading-5 mb-3"
+            className="text-xl whitespace-pre text-center text-gray-100 active:text-gray-100 leading-5 mb-3"
           >
             <Link
               to={link.to}
