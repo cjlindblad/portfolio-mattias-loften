@@ -15,7 +15,7 @@ const Gallery = ({ data }) => {
   const Image = ({ fluid, index, caption }) => {
     return (
       <div
-        className="w-full lg:w-1/2 overflow-hidden my-1 px-1 hover:opacity-50 transition-opacity duration-200"
+        className="w-full lg:w-1/2 overflow-hidden my-1 px-1 md:hover:opacity-50 transition-opacity duration-200"
         style={{ cursor: "pointer" }}
         onClick={() => {
           setIsOpen(true)
