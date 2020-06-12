@@ -12,8 +12,6 @@ const Gallery = ({ data }) => {
     edge => edge.node.childImageSharp.fluid.src
   )
 
-  console.log(data)
-
   const Image = ({ fluid, index, caption }) => {
     return (
       <div
@@ -24,7 +22,7 @@ const Gallery = ({ data }) => {
           setPhotoIndex(index)
         }}
       >
-        <Img fluid={fluid} />
+        <Img fluid={fluid} loading="eager" />
         {caption}
       </div>
     )

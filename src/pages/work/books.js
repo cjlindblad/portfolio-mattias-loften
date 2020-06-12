@@ -13,9 +13,9 @@ const Page = React.memo(() => {
         edges {
           node {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1500) {
                 src
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
             fields {
