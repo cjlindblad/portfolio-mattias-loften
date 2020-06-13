@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import Gallery from "../../components/gallery"
 
 import { useStaticQuery, graphql } from "gatsby"
@@ -29,7 +30,14 @@ const Page = React.memo(() => {
     }
   `)
 
-  return <Gallery data={data} />
+  return (
+    <>
+      <Helmet>
+        <title>Mattias Loftén - Magazine Layout</title>
+      </Helmet>
+      <Gallery data={data} />
+    </>
+  )
 })
 
 export default Page
