@@ -22,7 +22,7 @@ const Gallery = ({ data }) => {
           setPhotoIndex(index)
         }}
       >
-        <Img fluid={fluid} loading="eager" />
+        <Img fluid={fluid} />
         {/* {caption && <span className="italic text-sm">{caption}</span>} */}
       </div>
     )
