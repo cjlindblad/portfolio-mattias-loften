@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
           <div key={link.to} className="mb-3 leading-5 text-center">
             <Link
               to={link.to}
-              className="text-xl whitespace-pre text-white opacity-75 visited:text-white active:text-white"
+              className="text-xl whitespace-pre text-white opacity-75 hover:text-white hover:opacity-100 visited:text-white active:text-white"
               activeClassName="opacity-100"
               style={{
                 textDecoration: `none`,
